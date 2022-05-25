@@ -32,9 +32,9 @@
                          'table-danger':heroe.honor < -70
                       }">
                       <ng-container *ngIf="heroe.vida > 0">
-                        <td>
-                          <img *ngIf="heroe.imagen" [src]="heroe.imagen" height="50px" [alt]="'Avatar de' + heroe.nombre" />
-                          <img *ngIf="!heroe.imagen" src="https://borilio.github.io/curso-angular/img/avatars/defaultheroe.svg" height="50px" [alt]="'Avatar de' + heroe.nombre" />
+                        <td class="text-center">
+                          <img *ngIf="heroe.imagen" [src]="heroe.imagen" width="20px" [alt]="'Avatar de' + heroe.nombre" />
+                          <img *ngIf="!heroe.imagen" src="https://borilio.github.io/curso-angular/img/avatars/defaultheroe.svg" width="20px" [alt]="'Avatar de' + heroe.nombre" />
                         </td>
                         <td>{{heroe.nombre}}</td>
                         <td  [class.table-warning]="heroe.poder >200">{{heroe.poder}}</td>
