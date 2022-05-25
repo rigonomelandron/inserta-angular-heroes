@@ -13,32 +13,35 @@
             <h5 class="card-title">Lista de héroes</h5>
             <div class="card-text">
 
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Poder</th>
-                    <th>Honor</th>
-                    <th>Ataque</th>
-                    <th>Defensa</th>
-                    <th>Vida</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let heroe of lista" [class]="{
-                       'table-info':heroe.honor >70,
-                       'table-danger':heroe.honor < -70
-
-                    }">
-                    <td>{{heroe.nombre}}</td>
-                    <td *ngIf="heroe.poder > 200" [class]="poderoso">{{heroe.poder}}</td>
-                    <td>{{heroe.honor}}</td>
-                    <td>{{heroe.ataque}}</td>
-                    <td>{{heroe.defensa}}</td>
-                    <td>{{heroe.vida}}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div id="tabla" class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Poder</th>
+                      <th>Honor</th>
+                      <th>Ataque</th>
+                      <th>Defensa</th>
+                      <th>Vida</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let heroe of lista" [class]="{
+                         'table-info':heroe.honor > 70,
+                         'table-danger':heroe.honor < -70
+                      }">
+                      <ng-container *ngIf="heroe.vida > 0">
+                        <td>{{heroe.nombre}}</td>
+                        <td  [class.table-warning]="heroe.poder >200">{{heroe.poder}}</td>
+                        <td>{{heroe.honor}}</td>
+                        <td>{{heroe.ataque}}</td>
+                        <td>{{heroe.defensa}}</td>
+                        <td>{{heroe.vida}}</td>
+                      </ng-container>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
