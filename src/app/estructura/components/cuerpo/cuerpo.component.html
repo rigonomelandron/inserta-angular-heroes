@@ -3,58 +3,13 @@
     <!-- 1 fila, 3 columnas -->
     <div class="row">
       <!-- columna izquierda -->
-      <div class="col"></div>
+      <div class="col">
+
+        
+      </div>
       <!-- columna central -->
       <div class="col-12 col-md-6">
-        <!-- Tarjeta -->
-        <div id="tarjeta" class="card shadow">
-          <img class="card-img-top" src="/assets/img/banner.jpg" alt="banner" />
-          <div class="card-body">
-            <h5 class="card-title">Lista de héroes</h5>
-            <div class="card-text">
-
-              <div id="tabla" class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Imagen</th>
-                      <th>Nombre</th>
-                      <th>Poder</th>
-                      <th>Honor</th>
-                      <th>Ataque</th>
-                      <th>Defensa</th>
-                      <th>Vida</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let heroe of lista" [class]="{
-                         'table-info':heroe.honor > 70,
-                         'table-danger':heroe.honor < -70
-                      }">
-                      <ng-container *ngIf="heroe.vida > 0">
-                        <td class="text-center">
-                          <img *ngIf="heroe.imagen" [src]="heroe.imagen" width="20px" [alt]="'Avatar de' + heroe.nombre" />
-                          <img *ngIf="!heroe.imagen" src="https://borilio.github.io/curso-angular/img/avatars/defaultheroe.svg" width="20px" [alt]="'Avatar de' + heroe.nombre" />
-                        </td>
-                        <td>{{heroe.nombre}}</td>
-                        <td  [class.table-warning]="heroe.poder >200">{{heroe.poder}}</td>
-                        <td>{{heroe.honor}}</td>
-                        <td>{{heroe.ataque}}</td>
-                        <td>{{heroe.defensa}}</td>
-                        <td>{{heroe.vida}}</td>
-                      </ng-container>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr colspan="6">
-                      <td><span class="badge text-dark bg-warning rounded-circle p-2">{{lista.length}}</span><span> Personajes</span></td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        <app-listado-tabla></app-listado-tabla>
       </div>
       <!-- columna derecha -->
       <div class="col"></div>

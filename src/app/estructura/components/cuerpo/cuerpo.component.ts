@@ -9,16 +9,12 @@ import { Heroe } from '../../models/heroe.model';
 })
 export class CuerpoComponent implements OnInit {
 
-  public lista : Heroe[];
-
-
-
   constructor(private _heroesService : HeroesService) {
-     this.lista=[];
+
     }
 
     ngOnInit(): void {
-       this.lista = this._heroesService.getHeroes();
+
 
   }
 
