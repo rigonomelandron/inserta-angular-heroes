@@ -22,7 +22,8 @@
             <tr *ngFor="let heroe of lista" [class]="{
                          'table-info':heroe.honor > 70,
                          'table-danger':heroe.honor < -70
-                      }">
+                      }"
+                      (click)="seleccionarFavorito(heroe)">
               <ng-container *ngIf="heroe.vida > 0">
                 <td class="text-center">
                   <img *ngIf="heroe.imagen" [src]="heroe.imagen" width="20px" [alt]="'Avatar de' + heroe.nombre" />

@@ -5,11 +5,18 @@
       <!-- columna izquierda -->
       <div class="col">
 
-        
+        <div id="favorito" class="alert alert-danger sticky-top shadow-lg" *ngIf="heroeFavorito">
+          <h4>Favorito</h4>
+          <hr/>
+          <img [src]="heroeFavorito.imagen ? heroeFavorito.imagen : 'https://borilio.github.io/curso-angular/img/avatars/defaultheroe.svg'" width="50rem" alt="">
+          <p>{{heroeFavorito.nombre}}</p>
+          <hr/>
+          <button (click)="this.heroeFavorito=null" class="btn btn-danger btn-sm">borrar</button>
+        </div>
       </div>
       <!-- columna central -->
       <div class="col-12 col-md-6">
-        <app-listado-tabla></app-listado-tabla>
+        <app-listado-tabla (favorito)="procesarFavorito($event)"></app-listado-tabla>
       </div>
       <!-- columna derecha -->
       <div class="col"></div>

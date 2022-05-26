@@ -5,17 +5,15 @@ import { Heroe } from '../../models/heroe.model';
 @Component({
   selector: 'app-cuerpo',
   templateUrl: './cuerpo.component.html',
-  styleUrls: ['./cuerpo.component.css']
+  styleUrls: ['./cuerpo.component.css'],
 })
 export class CuerpoComponent implements OnInit {
+  public heroeFavorito?: Heroe |null;
 
-  constructor(private _heroesService : HeroesService) {
-
-    }
-
-    ngOnInit(): void {
-
-
+  constructor() {}
+  public procesarFavorito(heroe: Heroe) {
+    this.heroeFavorito = heroe;
   }
 
+  ngOnInit(): void {}
 }
