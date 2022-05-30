@@ -13,7 +13,7 @@ export class ListadoTablaComponent implements OnInit {
    public lista: Heroe[];
    public heroeFavorito? = Heroe;
   constructor(private _heroesService: HeroesService) {
-    this.lista = [];
+      this.lista=[];
   }
 
   public seleccionarFavorito(heroe : Heroe){
@@ -21,6 +21,8 @@ export class ListadoTablaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("arrancamos listado tabla");
+
     this.lista = this._heroesService.getHeroes();
   }
 

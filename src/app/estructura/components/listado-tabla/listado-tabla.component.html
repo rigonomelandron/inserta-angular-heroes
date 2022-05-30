@@ -16,7 +16,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let heroe of lista"
-                      (click)="seleccionarFavorito(heroe)">
+                      (click)="seleccionarFavorito(heroe)" >
               <ng-container *ngIf="heroe.vida > 0">
                 <td>
                   <img *ngIf="heroe.imagen" [src]="heroe.imagen" width="20px" [alt]="'Avatar de' + heroe.nombre" />
