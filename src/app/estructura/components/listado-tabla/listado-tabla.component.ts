@@ -11,7 +11,7 @@ export class ListadoTablaComponent implements OnInit {
 
   @Output() public favorito = new EventEmitter<Heroe>();
    public lista: Heroe[];
-   public heroeFavorito? = Heroe;
+   public heroeFavorito? : Heroe;
   constructor(private _heroesService: HeroesService) {
       this.lista=[];
   }
