@@ -7,11 +7,13 @@ import { SharedModule } from './shared/shared.module';
 //Cambiar el local a es-ES (O es-AR si queremos español de Argentina, p. ej.)
 import localeES from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { EsPeligrosoPipe } from './shared/pipes/es-peligroso.pipe';
 registerLocaleData(localeES);
 
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     BrowserModule,

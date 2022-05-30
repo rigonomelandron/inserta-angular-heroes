@@ -10,4 +10,11 @@ export class Heroe {
     public vida: number,
     public imagen: string
   ) {}
+  public esPoderoso(): boolean {
+    return this.poder > 200;
+  }
+
+  public esVillano(): boolean {
+    return this.honor < -50;
+  }
 }

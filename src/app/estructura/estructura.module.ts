@@ -6,6 +6,11 @@ import { PieComponent } from './components/pie/pie.component';
 import { PagePrincipalComponent } from './components/page-principal/page-principal.component';
 
 import { ListadoTablaComponent } from './components/listado-tabla/listado-tabla.component';
+import { SharedModule } from '../shared/shared.module';
+import { NavegacionComponent } from './components/navegacion/navegacion.component';
+import { ListadoTarjetaComponent } from './components/listado-tarjeta/listado-tarjeta.component';
+import { HomeComponent } from './components/home/home.component';
+import { BarraComponent } from './components/barra/barra.component';
 
 
 
@@ -16,11 +21,16 @@ import { ListadoTablaComponent } from './components/listado-tabla/listado-tabla.
     CuerpoComponent,
     PieComponent,
     PagePrincipalComponent,
-    ListadoTablaComponent
+    ListadoTablaComponent,
+    NavegacionComponent,
+    ListadoTarjetaComponent,
+    HomeComponent,
+    BarraComponent
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports:[
     PagePrincipalComponent
