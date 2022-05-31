@@ -1,6 +1,15 @@
+
 # Heroes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+
+## Despliegue en Netlify
+Esta aplicación está desplegada en Netlify Un servicio de hosting de contenido de código abierto.
+Tenemos dos ramas principales desplegadas en las siguientes URL:
+
+- Develop:https://devheroes-paco.netlify.app/
+
+- Master:https://heroes-paco.netlify.app/
 
 ## Development server
 
