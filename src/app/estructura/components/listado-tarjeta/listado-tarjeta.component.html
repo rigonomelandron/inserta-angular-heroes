@@ -1,6 +1,18 @@
 <!-- Grupo de tarjetas -->
 <!-- En próximas actualizaciones podemos reordenar las tarjetas-->
-<div>
+  <div class="spinner-border" role="status" *ngIf="cargando">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="alert alert-warning" *ngIf="!cargando && heroes.length===0 && !error">
+    <span>No hay elementos que mostrar</span>
+  </div>
+  <div *ngIf="error" class="alert alert-danger">
+    <strong>{{this.error}}</strong>
+    <span> Hubo un error en la petición Ajax</span>
+    <hr>
+  </div>
+
+<div *ngIf="!cargando && !error">
   <!-- Cada tarjeta individual -->
   <ng-container *ngFor="let heroe of heroes">
     <div

@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeroesService } from 'src/app/shared/services/heroes.service';
 
@@ -12,8 +13,12 @@ export class ListadoTablaComponent implements OnInit {
   @Output() public favorito = new EventEmitter<Heroe>();
    public lista: Heroe[];
    public heroeFavorito? : Heroe;
+   public error? : HttpErrorResponse;
+   public cargando : boolean;
   constructor(private _heroesService: HeroesService) {
       this.lista=[];
+      this.cargando = false;
+
   }
 
   public seleccionarFavorito(heroe : Heroe){
@@ -22,8 +27,34 @@ export class ListadoTablaComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("arrancamos listado tabla");
+    this.cargando = true;
+    let datos = this._heroesService.getHeroes();
+    datos.subscribe(
+       { next: (respuesta)=>{
+          this.lista = respuesta;
+          console.log("todo ha ido bien", respuesta);
 
-    this.lista = this._heroesService.getHeroes();
+        },
+         error: (error)=>{
+            console.error("todo ha ido mal", error);
+            this.error = error;
+
+        },
+        complete: ()=>{
+           this.cargando = false;
+           console.log("todo ha ido bien o no");
+
+
+        }
+      }
+
+    );
+
+
   }
 
 }
+function next(next: any, arg1: (respuesta: any) => void, arg2: (error: any) => void) {
+  throw new Error('Function not implemented.');
+}
+
