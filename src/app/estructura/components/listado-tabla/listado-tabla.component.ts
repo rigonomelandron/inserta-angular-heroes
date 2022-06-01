@@ -35,7 +35,7 @@ export class ListadoTablaComponent implements OnInit {
           console.log("todo ha ido bien", respuesta);
 
         },
-         error: (error)=>{
+         error: (error : HttpErrorResponse)=>{
             console.error("todo ha ido mal", error);
             this.error = error;
 
